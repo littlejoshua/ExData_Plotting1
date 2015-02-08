@@ -12,6 +12,7 @@ datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
 
 ## Plot 4
+png(file="plot4.png", height=480, width=480, bg = "transparent")
 par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
 with(data, {
     plot(Global_active_power~Datetime, type="l", 
@@ -29,5 +30,4 @@ with(data, {
 })
 
 ## Saving to file
-dev.copy(png, file="plot4.png", height=480, width=480)
 dev.off()
